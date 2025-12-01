@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0028472 -0.012903 -0.033655"
+        rpy="0 0 0" />
+      <mass
+        value="0.22649" />
+      <inertia
+        ixx="0.00033741"
+        ixy="-1.2875E-19"
+        ixz="-5.9541E-05"
+        iyy="0.00046118"
+        iyz="-2.5784E-19"
+        izz="0.00028889" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Empty_Link1">
+    <inertial>
+      <origin
+        xyz="0.027875 4.4502E-07 4.2904E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.052202" />
+      <inertia
+        ixx="0.00011158"
+        ixy="3.2787E-10"
+        ixz="-9.9473E-11"
+        iyy="9.0737E-05"
+        iyz="3.4435E-05"
+        izz="8.9798E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j1"
+    type="revolute">
+    <origin
+      xyz="-0.0044519 0.035576 0.056215"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Empty_Link1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Empty_Link2">
+    <inertial>
+      <origin
+        xyz="0.049821 -0.0016652 0.089461"
+        rpy="0 0 0" />
+      <mass
+        value="0.13587" />
+      <inertia
+        ixx="0.0010278"
+        ixy="-2.9184E-07"
+        ixz="7.4419E-07"
+        iyy="0.0010376"
+        iyz="1.6034E-05"
+        izz="0.00015077" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2"
+    type="revolute">
+    <origin
+      xyz="0.045635 -0.029846 0.030256"
+      rpy="3.1416 0.79222 1.5708" />
+    <parent
+      link="Empty_Link1" />
+    <child
+      link="Empty_Link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Empty_Link3">
+    <inertial>
+      <origin
+        xyz="0.050129 0.13127 0.058716"
+        rpy="0 0 0" />
+      <mass
+        value="0.2167" />
+      <inertia
+        ixx="0.00064012"
+        ixy="6.9419E-07"
+        ixz="2.9775E-08"
+        iyy="0.00040214"
+        iyz="-0.000141"
+        izz="0.00063948" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3"
+    type="revolute">
+    <origin
+      xyz="-0.007 -0.0037552 0.17996"
+      rpy="0 0 0" />
+    <parent
+      link="Empty_Link2" />
+    <child
+      link="Empty_Link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Empty_Link4">
+    <inertial>
+      <origin
+        xyz="0.042129 0.00021026 0.012017"
+        rpy="0 0 0" />
+      <mass
+        value="0.054059" />
+      <inertia
+        ixx="6.7245E-05"
+        ixy="-2.0301E-07"
+        ixz="-1.1731E-05"
+        iyy="9.1965E-05"
+        iyz="-2.5118E-07"
+        izz="0.00010244" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4"
+    type="revolute">
+    <origin
+      xyz="0.05 0.26477 0.078291"
+      rpy="-1.5708 -0.039487 1.5708" />
+    <parent
+      link="Empty_Link3" />
+    <child
+      link="Empty_Link4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Empty_Link5">
+    <inertial>
+      <origin
+        xyz="0.034857 0.015355 0.057414"
+        rpy="0 0 0" />
+      <mass
+        value="0.069965" />
+      <inertia
+        ixx="0.00017859"
+        ixy="-1.0817E-05"
+        ixz="-4.0435E-05"
+        iyy="0.00018392"
+        iyz="-2.1807E-05"
+        izz="0.00010933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://URDF/meshes/Empty_Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j5"
+    type="revolute">
+    <origin
+      xyz="0.06 2.165E-05 -0.041"
+      rpy="0.039487 -1.5703 -1.5708" />
+    <parent
+      link="Empty_Link4" />
+    <child
+      link="Empty_Link5" />
+    <axis
+      xyz="1 -4.8552E-05 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

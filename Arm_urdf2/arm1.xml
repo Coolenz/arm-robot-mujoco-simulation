@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="URDF">
+  <compiler angle="radian" meshdir="meshes"/>
+
+  <option gravity="0 0 -9.81"/>
+
+  <default>
+    <geom friction="1 0.005 0.0001"/>
+    <joint damping="4.0" frictionloss="0.2"/>
+  </default>
+
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="Empty_Link1" file="Empty_Link1.STL"/>
+    <mesh name="Empty_Link2" file="Empty_Link2.STL"/>
+    <mesh name="Empty_Link3" file="Empty_Link3.STL"/>
+    <mesh name="Empty_Link4" file="Empty_Link4.STL"/>
+    <mesh name="Empty_Link5" file="Empty_Link5.STL"/>
+  </asset>
+
+  <worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+    <geom name="ground" type="plane" size="2 2 0.1" rgba="0.6 0.7 0.6 1"/>
+
+    <body name="base_link" pos="0 0 0.04">
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link" pos="0 0 0"/>
+      
+      <body name="Empty_Link1" pos="-0.0044519 0.035576 0.061" quat="0.499998 0.5 -0.5 0.500002">
+      <inertial pos="0.027875 4.4502e-07 4.2904e-07" quat="0.654203 0.268373 -0.268366 0.654197" mass="0.052202" diaginertia="0.000124706 0.00011158 5.58293e-05"/>
+      <joint name="j1" pos="0 0 0" axis="1 0 0" limited="true" range="-3.1416 3.1416" damping="2.0" frictionloss="0.1"/>
+      <geom type="mesh" rgba="0.9 0.1 0.1 1" mesh="Empty_Link1"/>
+        
+        <body name="Empty_Link2" pos="0.045635 -0.029846 0.030256" quat="0.272823 0.652355 0.652355 -0.272827">
+        <inertial pos="0.049821 -0.0016652 0.089461" quat="0.69727 0.00599467 -0.00677463 0.716751" mass="0.13587" diaginertia="0.0010379 0.00102779 0.00015048"/>
+        <joint name="j2" pos="0 0 0" axis="1 0 0" limited="true" range="-3.1416 3.1416" damping="8.0" frictionloss="0.5"/>
+          <geom type="mesh" rgba="0.1 0.9 0.1 1" mesh="Empty_Link2"/>
+          
+          <body name="Empty_Link3" pos="-0.007 -0.0037552 0.17996">
+            <inertial pos="0.050129 0.13127 0.058716" quat="0.378739 0.595408 -0.597044 0.381556" mass="0.2167" diaginertia="0.000705103 0.00064012 0.000336517"/>
+            <joint name="j3" pos="0 0 0" axis="1 0 0" limited="true" range="-2.0 2.0" damping="8.0" frictionloss="0.5"/>
+            <geom type="mesh" rgba="0.1 0.1 0.9 1" mesh="Empty_Link3"/>
+            
+            <body name="Empty_Link4" pos="0.05 0.26477 0.078291" quat="0.509772 -0.490031 -0.509775 0.490031">
+              <inertial pos="0.042129 0.00021026 0.012017" quat="-0.00801163 0.595904 -6.4154e-05 0.803016" mass="0.054059" diaginertia="0.000105994 9.19652e-05 6.36908e-05"/>
+              <joint name="j4" pos="0 0 0" axis="1 0 0" limited="true" range="-2.0 2.0" damping="2.0" frictionloss="0.1"/>
+              <geom type="mesh" rgba="0.9 0.9 0.1 1" mesh="Empty_Link4"/>
+              
+              <body name="Empty_Link5" pos="0.06 2.165e-05 -0.041" quat="0.509894 -0.489906 -0.509651 -0.490159">
+                <inertial pos="0.034857 0.015355 0.057414" quat="0.969756 -0.127071 0.20746 -0.0196474" mass="0.069965" diaginertia="0.000197262 0.000189826 8.47521e-05"/>
+                <joint name="j5" pos="0 0 0" axis="1 -4.8552e-05 0" limited="true" range="-2.0 2.0"/>
+                <geom type="mesh" rgba="0.9 0.1 0.9 1" mesh="Empty_Link5"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <position joint="j1" name="j1_position" ctrllimited="true" ctrlrange="-3.1416 3.1416" kp="50"/>
+    <position joint="j2" name="j2_position" ctrllimited="true" ctrlrange="-3.1416 3.1416" kp="50"/>
+    <position joint="j3" name="j3_position" ctrllimited="true" ctrlrange="-2.0 2.0" kp="50"/>
+    <position joint="j4" name="j4_position" ctrllimited="true" ctrlrange="-2.0 2.0" kp="50"/>
+    <position joint="j5" name="j5_position" ctrllimited="true" ctrlrange="-2.0 2.0" kp="50"/>
+  </actuator>
+
+</mujoco>
